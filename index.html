@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello Canvas!</title>
+  <link rel="stylesheet" href="fuzzer.css">
+</head>
+<body>
+    <center>
+        <div id="controls">
+            <input class="fuzz_option" id="option_weighted" type="checkbox">Use Mutator Weights</input>
+            <input class="fuzz_option" id="option_directed" type="checkbox">Use Directed Mutations</input>
+            <button onclick="run()">Start</button>
+        </div>
+        <p><span>Iterations: </span><span id="iterations"></span></p>
+        <p><span>Previous Iterations-To-Exposure: </span><span id="history"></span></p>
+        <div class="wrapper">
+            <canvas class="fuzzer_canvas" id="bg_canvas" width="1000" height="1000"></canvas>
+            <canvas class="fuzzer_canvas" id="fg_canvas" width="1000" height="1000"></canvas>
+        </div>
+        <textarea id="code">
+var target = {"x" : 900, "y" : 900};
+function feedback(pos) {
+    var dx = pos.x - target.x;
+    var dy = pos.y - target.y;
+    var result = 1000 - distance(target, pos);
+    if (result > 980) {
+        return "found";
+    }
+    return result;
+}
+feedback
+        </textarea>
+    </center>
+    <script src="fuzzer.js"></script>
+</body>
+</html>

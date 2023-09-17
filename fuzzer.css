@@ -1,0 +1,36 @@
+.fuzzer_canvas {
+    background-color: #ffffff;
+    width: 80vmin;
+    height: 80vmin;
+    border-style: solid;
+    border-color: black;
+}
+
+.wrapper {
+    position: relative;
+    width: 80vmin;
+    height: 80vmin;
+    display: inline-block;
+}
+
+.wrapper canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#fg_canvas {
+    opacity: 0.5;
+}
+
+#code {
+    width: 80vmin;
+    height: 80vmin;
+}
+
+#controls {
+    border-style: solid;
+    border-color: grey;
+    padding: 1em;
+    width: 40vmin;
+}
